@@ -1,0 +1,1 @@
+# Kubu Terbuka - Huruf Bercahaya
