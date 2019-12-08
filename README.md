@@ -1,1 +1,1 @@
-# Kubu Terbuka - Huruf Bercahaya
+# Kubus Terbuka - Huruf Bercahaya
