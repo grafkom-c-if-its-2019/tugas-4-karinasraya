@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Animasi Huruf Dalam Kubus</title>
+    <meta http-equiv="content-type" content="text/html" charset="ISO-8859-1">
+
+    <script type="text/javascript" src="gl-matrix-min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+
+    <script id="shader-fs" type="x-shader/x-fragment">
+      precision mediump float;
+      varying vec4 vColor;
+      void main(void) {
+        gl_FragColor = vColor;
+      }
+    </script>
+
+    <style>
+      div.static {
+        position: absolute;
+      top: 70px;
+      left: 700px;
+      width: 600px;
+      height: 370px;
+      border: 3px solid rgb(47, 54, 37);
+      }
+      .font{
+        font-size: 1.5em;
+        font-family: "Times New Roman", Times, serif;
+  
+      }
+    </style>
+    
+    <script id="shader-vs" type="x-shader/x-vertex">
+      attribute vec3 aVertexPosition;
+      attribute vec4 aVertexColor;
+      uniform mat4 uMVMatrix;
+      uniform mat4 uPMatrix;
+      varying vec4 vColor;
+      void main(void) {
+        gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+        vColor = aVertexColor;
+      }
+    </script>
+  </head>
+  <body onload="webGLStart();">
+    <canvas id="mycanvas" style="border: none" width="600" height="500"></canvas>
+    <!-- <h2>Interaksi</h2> -->
+    <div class="static">
+      <ul class="font">
+      <p>W : Menjauhkan Kamera</p>
+      <p>S : Mendekatkan Kamera</p>
+      <p>Left Arrow : Merotasi ke Kiri</p>
+      <p>Right Arrow : Merotasi ke Kanan</p>
+      <p>Up Arrow : Merotasi ke Atas</p>
+      <p>Down Arrow : Merotasi ke Bawah</p>
+      <p>Mouse (Click & Drag) : Merubah Orientasi</p>
+    </ul>
+  </div>
+</body>
+</html>
