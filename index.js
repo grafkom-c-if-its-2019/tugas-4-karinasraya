@@ -224,7 +224,7 @@ var zAdder = 0.04;
               +0.25, 0.0, 
               +0.45, +0.8,
               +0.55, +0.6,
-              +0.25, 0.0
+              +0.25, 0.0,
               ]);
 
             var triangleVertexBufferObject = gl.createBuffer();
